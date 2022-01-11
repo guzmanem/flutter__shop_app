@@ -92,14 +92,18 @@ class _OrderButtonState extends State<OrderButton> {
                 widget.cart.items.values.toList(),
                 widget.cart.totalAmount,
               );
-              setState(() {
-                isLoadig = false;
-              });
+              setState(
+                () {
+                  isLoadig = false;
+                },
+              );
               widget.cart.clear();
             },
-      child: isLoadig ? CircularProgressIndicator() : Text(
-        'ORDER NOW',
-      ),
+      child: isLoadig
+          ? CircularProgressIndicator()
+          : Text(
+              'ORDER NOW',
+            ),
     );
   }
 }
