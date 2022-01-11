@@ -66,13 +66,15 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               ];
             },
             onSelected: (FilterOptions selectValue) {
-              setState(() {
-                if (selectValue == FilterOptions.Favorites) {
-                  _showOnlyFavorites = true;
-                } else {
-                  _showOnlyFavorites = false;
-                }
-              });
+              setState(
+                () {
+                  if (selectValue == FilterOptions.Favorites) {
+                    _showOnlyFavorites = true;
+                  } else {
+                    _showOnlyFavorites = false;
+                  }
+                },
+              );
             },
           ),
           Consumer<Cart>(
