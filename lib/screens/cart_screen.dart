@@ -85,9 +85,11 @@ class _OrderButtonState extends State<OrderButton> {
       onPressed: (widget.cart.totalAmount <= 0 || isLoadig)
           ? null
           : () async {
-              setState(() {
-                isLoadig = true;
-              });
+              setState(
+                () {
+                  isLoadig = true;
+                },
+              );
               await Provider.of<Orders>(context, listen: false).addOrder(
                 widget.cart.items.values.toList(),
                 widget.cart.totalAmount,
