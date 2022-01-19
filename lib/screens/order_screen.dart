@@ -22,6 +22,7 @@ class OrderScreen extends StatelessWidget {
             return Center(child: CircularProgressIndicator());
           } else {
             if (dataSnapshot.error != null) {
+              print(dataSnapshot.error);
               return Center(
                 child: Text('An error occurred!'),
               );
